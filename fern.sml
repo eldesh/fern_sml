@@ -1,19 +1,4 @@
 
-(**
- * `shida` image generation by StandardML
- * shida means a fern in Japanese.
- *
- * inspired by
- *   id:nakamura001 2014/05/05 shida generation by Processing
- *   http://d.hatena.ne.jp/nakamura001/20140505/1399316565
- *
- * howto
- *   $ sml
- *   - CM.make "sources.cm";
- *   - Fern.main (CommandLine.name(), CommandLine.arguments());
- *   - ^D
- *   $ pnmtopng fern.ppm > fern.png
- *)
 structure Fern :
 sig
   val main : (string * string list) -> int
@@ -116,4 +101,5 @@ struct
     end
     handle exn => (print(exnMessage exn); OS.Process.failure)
 end
+val _ = Fern.main (CommandLine.name(), ["fern_nj.ppm"])
 
